@@ -10,7 +10,7 @@ public class Main {
 //		younghee.calc();
 //		younghee.output();
 		Student [] array = new Student[3];
-		for(int i = 0 ; i < array.length ; i++) {
+		for(int i = 0 ; i < array.length ; i++) {  // i<=array.length라고 하면  java.lang.ArrayIndexOutOfBoundsException 뜸
 			array[i] = new Student();
 			array[i].input();
 			array[i].calc();
