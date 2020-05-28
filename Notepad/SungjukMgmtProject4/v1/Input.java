@@ -11,7 +11,7 @@ public class Input {
 		}
 		
 		public void input() {
-			for(int i=1 ; i<array.length ; i++) {
+			for(int i=0 ; i<array.length ; i++) {
 				System.out.println("학번 : ");
 				String hakbun = scan.next();
 				
@@ -29,5 +29,5 @@ public class Input {
 				
 				array[i] = new Student(hakbun, name, kor, eng, mat);				
 			}
-		}		
+	}		
 }
