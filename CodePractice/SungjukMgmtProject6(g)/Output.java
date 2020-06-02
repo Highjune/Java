@@ -5,47 +5,47 @@ import java.util.Vector;
 
 public class Output {
 	private Vector<Student> vector;
-	private FileOutputStream fos; // file·Î ³»º¸³¾ °Å´Ï±î FileOutPutStream. 
+	private FileOutputStream fos; // fileë¡œ ë‚´ë³´ë‚¼ ê±°ë‹ˆê¹Œ FileOutPutStream. 
 	
-	public Output(Vector<Student> vector) { //»ı¼ºÀÚ
+	public Output(Vector<Student> vector) { //ìƒì„±ì
 		this.vector = vector;
-		try { 		//»ı¼ºÀÚ·Î¼­ À§ÀÇ ¸â¹öº¯¼ö(fos) ÃÊ±âÈ­
-			this.fos = new FileOutputStream("C:/temp/result.txt", true); //¸ğµç °ÍÀ» ÇÑ¹ø¿¡ ³»º¸³»´Â °ÍÀÌ ¾Æ´Ï¶ó ÇĞ»ı¸¶´Ù ÁÙ¹Ù²ã¼­ ³»º¸³»¾ß µÇ´Ï±î appendÇØ¾ß µÇ´Ï±î true
+		try { 		//ìƒì„±ìë¡œì„œ ìœ„ì˜ ë©¤ë²„ë³€ìˆ˜(fos) ì´ˆê¸°í™”
+			this.fos = new FileOutputStream("C:/temp/result.txt", true); //ëª¨ë“  ê²ƒì„ í•œë²ˆì— ë‚´ë³´ë‚´ëŠ” ê²ƒì´ ì•„ë‹ˆë¼ í•™ìƒë§ˆë‹¤ ì¤„ë°”ê¿”ì„œ ë‚´ë³´ë‚´ì•¼ ë˜ë‹ˆê¹Œ appendí•´ì•¼ ë˜ë‹ˆê¹Œ true
 		} catch (FileNotFoundException e) {
 			System.out.println("File Not Found");
 		} 
 	}
 	
 	
-//	ÇÑ±ÛÀ» ¹ÙÀÌÆ® ¹è¿­·Î ¹Ù²Ù°í ±×°ÍÀ» ³»º¸³»°í ¹öÆÛ¿¡ ²¸ÀÖÀ» ¼ö ÀÖÀ¸´Ï±î flush ÇØÁà¾ß µÇ°í ¸Å¶óÀÎ¸¶´Ù ÁÙ¹Ù²Ş ÇØÁà¾ß µÈ´Ù.
-//	ÇÁ¸°ÅÍ ¶óº§ÀÌ ³¡³­ ´ÙÀ½¿¡ vector¿¡¼­ ÇÑ ÇĞ»ı¾¿ »Ì¾Æ¼­ Ãâ·Â
+//	í•œê¸€ì„ ë°”ì´íŠ¸ ë°°ì—´ë¡œ ë°”ê¾¸ê³  ê·¸ê²ƒì„ ë‚´ë³´ë‚´ê³  ë²„í¼ì— ê»´ìˆì„ ìˆ˜ ìˆìœ¼ë‹ˆê¹Œ flush í•´ì¤˜ì•¼ ë˜ê³  ë§¤ë¼ì¸ë§ˆë‹¤ ì¤„ë°”ê¿ˆ í•´ì¤˜ì•¼ ëœë‹¤.
+//	í”„ë¦°í„° ë¼ë²¨ì´ ëë‚œ ë‹¤ìŒì— vectorì—ì„œ í•œ í•™ìƒì”© ë½‘ì•„ì„œ ì¶œë ¥
 	public void output() {
 		try {
 			this.printLabel();
 			for(Student s : this.vector) {
-				this.fos.write(s.toString().getBytes("UTF-8")); //toString()ÀÌ ¹®ÀÚ¿­ÀÌ¹Ç·Î. 
-				this.fos.write(10); //ÇÑ ÇĞ»ı¸¶´Ù Âï°í ÁÙ ¹Ù²ã¾ß µÇ´Ï±î ÁÙ¹Ù²Ş.
+				this.fos.write(s.toString().getBytes("UTF-8")); //toString()ì´ ë¬¸ìì—´ì´ë¯€ë¡œ. s(student)ì—ëŠ” getBytes()í•¨ìˆ˜ê°€ ì—†ë‹¤.
+				this.fos.write(10); //í•œ í•™ìƒë§ˆë‹¤ ì°ê³  ì¤„ ë°”ê¿”ì•¼ ë˜ë‹ˆê¹Œ ì¤„ë°”ê¿ˆ.
 			}
-			this.fos.flush();//ÇĞ»ıµéÀ» ÇÑ²¨¹ø¿¡ flush. »ç½Ç À§¿¡ for¹®¿¡ ³Ö¾î¼­ ÇÑ¸í¾¿ flushÇØµµ µÈ´Ù.
-			System.out.println("File Save Success."); //ÀÌ°ÍÀÌ ÂïÈù´Ù´Â °ÍÀº exceptionÀÌ ¹ß»ıÇÏÁö ¾Ê¾Ò´Ù´Â ¸».  
-		}catch(IOException ex) { //try °úÁ¤¿¡¼­ exception¹ß»ıÇÏ¸é ¹«Á¶°Ç catch·Î ³Ñ¾î¿Â´Ù.
+			this.fos.flush();//í•™ìƒë“¤ì„ í•œêº¼ë²ˆì— flush. ì‚¬ì‹¤ ìœ„ì— forë¬¸ì— ë„£ì–´ì„œ í•œëª…ì”© flushí•´ë„ ëœë‹¤.
+			System.out.println("File Save Success."); //ì´ê²ƒì´ ì°íŒë‹¤ëŠ” ê²ƒì€ exceptionì´ ë°œìƒí•˜ì§€ ì•Šì•˜ë‹¤ëŠ” ë§.  
+		}catch(IOException ex) { //try ê³¼ì •ì—ì„œ exceptionë°œìƒí•˜ë©´ ë¬´ì¡°ê±´ catchë¡œ ë„˜ì–´ì˜¨ë‹¤.
 			System.out.println(ex);
 		}finally {
 			try {
-				this.fos.close(); //¼Ò¸êÀÚ
+				this.fos.close(); //ì†Œë©¸ì
 			}catch(IOException ex) {}
 		}
 	}
 	
-	//ÇĞ»ı°á°úµ¥ÀÌÅÍ¸¦ ÀúÀåÇÒ ÆÄÀÏÀÇ °æ·Î´Â C:/temp/result.txt
+	//í•™ìƒê²°ê³¼ë°ì´í„°ë¥¼ ì €ì¥í•  íŒŒì¼ì˜ ê²½ë¡œëŠ” C:/temp/result.txt
 	private void printLabel() throws IOException {
-		this.fos.write("                <<½Ö¿ë°íµîÇĞ±³ ¼ºÀû°ü¸®ÇÁ·Î±×·¥>>".getBytes("UTF-8")); //String("")À» getBytes·Î ¹Ù²Ù´Âµ¥ utf-8·Î ¹Ù²Û´Ù. ±×¸®°í ÀÌ·¸°Ô ¹Ù²Û ¹ÙÀÌÆ® ¹è¿­À» ¹öÆÛ¿¡ writeÇÑ´Ù.
-		this.fos.write(10); //ÁÙ¹Ù²Ş
-		this.fos.write("ÇĞ¹ø    ÀÌ¸§    ±¹¾î    ¿µ¾î    ¼öÇĞ   ÃÑÁ¡   Æò±Õ    ÆòÁ¡".getBytes("UTF-8")); 
+		this.fos.write("                <<ìŒìš©ê³ ë“±í•™êµ ì„±ì ê´€ë¦¬í”„ë¡œê·¸ë¨>>".getBytes("UTF-8")); //String("")ì„ getBytesë¡œ ë°”ê¾¸ëŠ”ë° utf-8ë¡œ ë°”ê¾¼ë‹¤. ê·¸ë¦¬ê³  ì´ë ‡ê²Œ ë°”ê¾¼ ë°”ì´íŠ¸ ë°°ì—´ì„ ë²„í¼ì— writeí•œë‹¤.
+		this.fos.write(10); //ì¤„ë°”ê¿ˆ
+		this.fos.write("í•™ë²ˆ    ì´ë¦„    êµ­ì–´    ì˜ì–´    ìˆ˜í•™   ì´ì    í‰ê·     í‰ì ".getBytes("UTF-8")); 
 		this.fos.write(10);
 		this.fos.write("------------------------------------------------".getBytes("UTF-8"));
 		this.fos.write(10);
-		this.fos.flush(); //À§ÀÇ °ÍµéÀ» ´Ù ¹öÆÛ¿¡ ´ã¾Ò´Âµ¥, ÀÌ°ÍÀ» flush
+		this.fos.flush(); //ìœ„ì˜ ê²ƒë“¤ì„ ë‹¤ ë²„í¼ì— ë‹´ì•˜ëŠ”ë°, ì´ê²ƒì„ flush
 	}
 }
 
