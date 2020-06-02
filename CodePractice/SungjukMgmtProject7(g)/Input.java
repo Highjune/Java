@@ -24,16 +24,16 @@ public class Input {
 	
 	public void input() {
 		try {
-		byte[] buffer = new byte[this.fis.available()]; //availableÀº Æ¯Á¤ÇÑ ¾çÀ» Àß ¸ğ¸¦ ‹š »ç¿ë, textÆÄÀÏ¿¡¼­ ÀĞ¾îµéÀÏ ¼ö ÀÖ´Â ¾çÀÓ. ±× ¾ç¸¸Å­¸¸ ÇÑ¹ø¿¡ ÀĞ¾îµé¿©¼­ µü ¸¸µç´Ù. ´ë½Å ÃßÃµÇÏ´Â ¹æ¹ıÀºx. ¸¸¾à ÆÄÀÏÀÌ ¾öÃ» Å©¸é ¹®Á¦°¡ µÈ´Ù. 
-		int number = this.fis.read(buffer);//buffer¶ó°í ÇÏ´Â ¹ÙÀÌÆ® ¹è¿­¿¡ ´ã¾ÒÀ½.
-		String str = new String(buffer, 0, number); //À§¿¡¼­ ¸¸µç ¹ÙÀÌÆ® ¹è¿­À» stringÀ¸·Î ¸¸µé ¶§ »ı¼ºÀÚ¸¦ ¾´´Ù. ÆÄ¶ó¹ÌÅÍ(¹ÙÀÌÅÍ¹è¿­, Ã³À½, ¸î°³)
-		StringTokenizer st = new StringTokenizer(str, "\n"); //ÀüÃ¼°¡ 3ÁÙÀÌ´Ï±î °¢ 1ÁÙÀÌ countTokens°¡ µÈ´Ù.
-		String [] array = new String[st.countTokens()]; //°¢ 3ÁÙÀÇ ¹æÀ» ¸¸µç´Ù.
-		for(int i=0; i<array.length;i++) {
-			array[i] = st.nextToken();  //array[0] = 2019-01	ÇÑÁö¹Î	45 67 98
-			Scanner scan = new Scanner(array[i]).useDelimiter("\\s+");
-			Student student = new Student(scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.nextInt());
-			this.vector.addElement(student);
+			byte[] buffer = new byte[this.fis.available()]; //availableì€ íŠ¹ì •í•œ ì–‘ì„ ì˜ ëª¨ë¥¼ Â‹Âš ì‚¬ìš©, textíŒŒì¼ì—ì„œ ì½ì–´ë“¤ì¼ ìˆ˜ ìˆëŠ” ì–‘ì„. ê·¸ ì–‘ë§Œí¼ë§Œ í•œë²ˆì— ì½ì–´ë“¤ì—¬ì„œ ë”± ë§Œë“ ë‹¤. ëŒ€ì‹  ì¶”ì²œí•˜ëŠ” ë°©ë²•ì€x. ë§Œì•½ íŒŒì¼ì´ ì—„ì²­ í¬ë©´ ë¬¸ì œê°€ ëœë‹¤. 
+			int number = this.fis.read(buffer);//bufferë¼ê³  í•˜ëŠ” ë°”ì´íŠ¸ ë°°ì—´ì— ë‹´ì•˜ìŒ.
+			String str = new String(buffer, 0, number); //ìœ„ì—ì„œ ë§Œë“  ë°”ì´íŠ¸ ë°°ì—´ì„ stringìœ¼ë¡œ ë§Œë“¤ ë•Œ ìƒì„±ìë¥¼ ì“´ë‹¤. íŒŒë¼ë¯¸í„°(ë°”ì´í„°ë°°ì—´, ì²˜ìŒ, ëª‡ê°œ)
+			StringTokenizer st = new StringTokenizer(str, "\n"); //ì „ì²´ê°€ 3ì¤„ì´ë‹ˆê¹Œ ê° 1ì¤„ì´ countTokensê°€ ëœë‹¤.
+			String [] array = new String[st.countTokens()]; //ê° 3ì¤„ì˜ ë°©ì„ ë§Œë“ ë‹¤.
+			for(int i=0; i<array.length;i++) {
+				array[i] = st.nextToken();  //array[0] = 2019-01	í•œì§€ë¯¼	45 67 98
+				Scanner scan = new Scanner(array[i]).useDelimiter("\\s+");
+				Student student = new Student(scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.nextInt());
+				this.vector.addElement(student);
 		}
 		
 		}catch(IOException ex) {
