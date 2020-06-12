@@ -7,6 +7,11 @@ public class Output {
 	}
 	
 	public void output() {
-		
+		printlabel();
 	}
+	
+	public void printlabel() {
+		System.out.println("------");
+	}
+	
 }
