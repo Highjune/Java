@@ -13,6 +13,7 @@ public class Output {
 	public void printlabel() {
 		System.out.println("------");
 		System.out.println("------");
+		System.out.println("------");
 	}
 	
 }
