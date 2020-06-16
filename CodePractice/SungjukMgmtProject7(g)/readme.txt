@@ -10,3 +10,8 @@ cf) 수많은 학생들의 데이터를 파일에서 읽어서 메모리에서 �
 입력데이터 : sungjuk.txt ( C:/temp/에 두고)
 출력데이터 : result.txt (만들어지는 것)
 
+Main - vector만들어서 각각의 생성자에 다 넣음
+Input - C:/temp/sungjuk.txt 파일 읽어들임
+Calc - vector에 있는 것들 다 계산
+Sort - 정렬
+Output - C:/temp/result.txt 로 내보내기
