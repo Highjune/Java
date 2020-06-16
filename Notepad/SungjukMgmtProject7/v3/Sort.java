@@ -6,19 +6,17 @@ public class Sort {
 	private Vector<Student> vector;
 	
 	public Sort(Vector<Student> vector) {
-		this.vector = vector;		
+		this.vector = vector;
 	}
 	
 	public void sort() {
 		Collections.sort(this.vector, new Comparator<Student>() {
-
 			@Override
 			public int compare(Student s1, Student s2) {
-				return (s1.getTot() > s2.getTot()) ? -1 : 
-							(s1.getTot() == s2.getTot()) ? 0 : 1;
+				return s1.getTot()>s2.getTot() ? -1 :
+								s1.getTot() == s2.getTot() ? -1 : 0;
 			}
 		});
-	}
+	}	
+	
 }
-
-
