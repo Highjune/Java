@@ -83,4 +83,6 @@ public class Student {
 				+ ", tot=" + tot + ", avg=" + avg + ", grade=" + grade + "]";
 	}
 	
+	
 }
+	
