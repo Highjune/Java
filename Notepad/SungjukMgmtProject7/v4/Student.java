@@ -82,7 +82,7 @@ public class Student {
 		return "Student [hakbun=" + hakbun + ", name=" + name + ", kor=" + kor + ", eng=" + eng + ", mat=" + mat
 				+ ", tot=" + tot + ", avg=" + avg + ", grade=" + grade + "]";
 	}
+
 	
 	
 }
-	
