@@ -14,7 +14,7 @@ public class Main {
 		sort.sort();
 		
 		Output output = new Output(vector);
-		output.output();
+		output.output();		
 		
 	}
 }

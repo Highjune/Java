@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -12,29 +13,28 @@ public class Input {
 		this.vector = vector;
 		try {
 			fis = new FileInputStream("C:/temp/sungjuk.txt");
-		}catch(IOException e) {
-			System.out.println(e);
-		}
+			System.out.println("File Input Success");
+		} catch (FileNotFoundException e) {
+			System.out.println("File not Found");
+		}		
 	}
 	
 	public void input() {
 		try {
-			byte[] buffer = new byte[this.fis.available()];
+			byte[] buffer = new byte[this.fis.available()]; 
 			int max = this.fis.read(buffer);
-			String str = new String(buffer, 0, max);
-			StringTokenizer st = new StringTokenizer(str, "\n");
-			String[] array = new String[st.countTokens()];
-			for(int i = 0; i<array.length ; i++) {
-				array[i] = st.nextToken();
-				Scanner scan = new Scanner(array[i]).useDelimiter("\\s+");
-				Student stu = new Student(scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.nextInt());
-				this.vector.add(stu);
-		}
-			
-		}catch(IOException ex) {
-			System.out.println(ex);
+			String st = new String(buffer, 0, max);
+			StringTokenizer str = new StringTokenizer(st, "\n");
+			String[] array = new String[str.countTokens()];
+			for(int i=0 ; i < array.length ; i++) {  
+				array[i] = str.nextToken();
+				Scanner scan = new Scanner(array[i]).useDelimiter("\\s+");			
+				Student s = new Student(scan.next(), scan.next(), scan.nextInt(), scan.nextInt(), scan.nextInt());
+				this.vector.add(s);
+			}
+		}catch(IOException e) {
+			System.out.println(e);
 		}
 		
-	}
-	
+	}	
 }

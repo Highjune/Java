@@ -13,9 +13,9 @@ public class Sort {
 		Collections.sort(this.vector, new Comparator<Student>() {
 
 			@Override
-			public int compare(Student s1, Student s2) {				
-				return s1.getTot() > s2.getTot() ? -1 :
-							s1.getTot() == s2.getTot() ? 0 : -1;						
+			public int compare(Student s1, Student s2) { 
+				return s1.getTot() > s2.getTot() ? 1 : 
+							s1.getTot() == s2.getTot() ? 0 : -1;				
 			}
 		});
 	}

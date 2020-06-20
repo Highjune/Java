@@ -12,11 +12,13 @@ public class Sort {
 	public void sort() {
 		//Collections.sort(this.vector);
 		Collections.sort(this.vector, new Comparator<Student>() {
-			@Override
-			public int compare(Student s1, Student s2) {
-				return s1.getTot() > s2.getTot() ? -1 :
+			@Override  
+			public int compare(Student s1, Student s2) { //내림차순임. 오름차순으로 하려면 -1<-->1 바꿈
+				return s1.getTot() > s2.getTot() ? -1 : 
 								s1.getTot() == s2.getTot() ? 0 : 1;
 			}
+			
+			
 		});
 	}
 }
