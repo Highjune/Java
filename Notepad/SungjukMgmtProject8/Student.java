@@ -1,7 +1,7 @@
 
 public class Student {
 	private String hakbun, name;
-	private int kor, eng, mat, edp, tot;
+	private int kor, eng, mat, edp, tot; 
 	private double avg;
 	private char grade;
 	public Student(String hakbun, String name, int kor, int eng, int mat, int edp) {
