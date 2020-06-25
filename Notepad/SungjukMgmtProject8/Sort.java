@@ -3,7 +3,7 @@ import java.util.Comparator;
 import java.util.Vector;
 
 public class Sort {
-	private Vector<Student> vector;
+	private Vector<Student> vector;  
 	
 	public Sort(Vector<Student> vector) {
 		this.vector = vector;
