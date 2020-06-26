@@ -45,7 +45,7 @@ public class Student {
 	public int getEdp() {
 		return edp;
 	}
-	public void setEdp(int edp) {
+	public void setEdp(int edp) { 
 		this.edp = edp;
 	}
 	public int getTot() {
