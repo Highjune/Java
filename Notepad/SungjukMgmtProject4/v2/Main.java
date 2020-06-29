@@ -16,3 +16,4 @@ public class Main {
 		output.output(array);		
 	}
 }
+ 
