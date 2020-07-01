@@ -4,38 +4,38 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-
+ 
 
 
 
 
 public class FileInputStreamDemo {
 	public static void main(String[] args) {
-		//¸ŞÀÎÀº ÂªÀ»¼ö·Ï ÁÁ´Ù. ÇÒÀÏµéÀ» ³ª´²ÁÖ¸é ÁÁ´Ù.
-		String path = "C:/temp/addresslist.txt"; //ºÒ·¯¿Ã ÆÄÀÏ, ÆÄÀÏÀÔ·ÂÀÌ´Ï±î FileInputstream½á¾ß µÊ
+		//ë©”ì¸ì€ ì§§ì„ìˆ˜ë¡ ì¢‹ë‹¤. í• ì¼ë“¤ì„ ë‚˜ëˆ ì£¼ë©´ ì¢‹ë‹¤.
+		String path = "C:/temp/addresslist.txt"; //ë¶ˆëŸ¬ì˜¬ íŒŒì¼, íŒŒì¼ì…ë ¥ì´ë‹ˆê¹Œ FileInputstreamì¨ì•¼ ë¨
 		ArrayList<Member> list = getMember(path);
-//		System.out.println(list.get(2)); //µé¾îÀÖ´ÂÁö È®ÀÎ.
+//		System.out.println(list.get(2)); //ë“¤ì–´ìˆëŠ”ì§€ í™•ì¸.
 	}
 	
 	private static ArrayList<Member> getMember(String path){
-	//»¡´ëÀÇ ½ÃÀÛÀº addresslist.txt, »¡´ëÀÇ ³¡Àº ÀÔ·Â¹öÆì
+	//ë¹¨ëŒ€ì˜ ì‹œì‘ì€ addresslist.txt, ë¹¨ëŒ€ì˜ ëì€ ì…ë ¥ë²„í´
 		ArrayList<Member> list = null;
-		try(FileInputStream fis = new FileInputStream(path)) { //try¾È¿¡ °´Ã¼»ı¼ºÇÏ´Â ¹®Àå ³ÖÀ¸¸é µû·Î close()ÇÏÁö ¾Ê¾Æµµ tryºí·°À» ¹ş¾î³ª´Â ¼ø°£ ÀÚµ¿ÀûÀ¸·Î close()°¡ È£ÃâµÈ´Ù(ÀÚ¹ÙÀÇ Á¤¼® p437)
-			byte [] buffer = new byte[512]; //ÇÏ³ª¾¿ ÀĞ¾îµéÀÌ´Â °ÍÀÌ read, ¿©·¯°³¾¿ ÀĞÀ¸·Á°í ÇÏ´Â °Í byte¹è¿­·Î. Æ¯È÷ ÇÑ±ÛÀÌ ÀÖÀ¸´Ï±î byte¹è¿­
-			//512Àº ¿©À¯·Ó°Ô Àâ¾Æ³õ°í ÇÑ¹ø¿¡ ÀĞ¾îµéÀÌ´Â °ÍÀÌ´Ï±î while¹® ¾È½áµµ µÈ´Ù.
-			int number = fis.read(buffer);  //ÀĞ¾îµéÀÎ °ÍÀ» buffer¿¡ ³Ö¾ú°í ±× ¾ç¸¸Å­ number
-			String str = new String(buffer, 0, number); //byte¹è¿­À» stringÀ¸·Î ¹Ù²Ù±â À§ÇØ¼­ string»ı¼ºÀÚ. ÆÄ¶ó¹ÌÅÍ1 - ¹ÙÀÌÆ®¹è¿­ / ÆÄ¶ó¹ÌÅÍ2 - Ã³À½ºÎÅÍ~ / ÆÄ¶ó¹ÌÅÍ3 - number°³ // cf) StringÀ» byte·Î ¹Ù²Ù·Á¸é getBytes
-			StringTokenizer st = new StringTokenizer(str, "\n"); //¿£ÅÍ±âÁØÀ¸·Î Â¥¸§ (¿©±â¼­ °¢°¢ ÀÚ¸¥ °ÍÀº ¹«Á¶°Ç ´Ù stringÀ¸·Î ¹Ş´Â´Ù)
+		try(FileInputStream fis = new FileInputStream(path)) { //tryì•ˆì— ê°ì²´ìƒì„±í•˜ëŠ” ë¬¸ì¥ ë„£ìœ¼ë©´ ë”°ë¡œ close()í•˜ì§€ ì•Šì•„ë„ tryë¸”ëŸ­ì„ ë²—ì–´ë‚˜ëŠ” ìˆœê°„ ìë™ì ìœ¼ë¡œ close()ê°€ í˜¸ì¶œëœë‹¤(ìë°”ì˜ ì •ì„ p437)
+			byte [] buffer = new byte[512]; //í•˜ë‚˜ì”© ì½ì–´ë“¤ì´ëŠ” ê²ƒì´ read, ì—¬ëŸ¬ê°œì”© ì½ìœ¼ë ¤ê³  í•˜ëŠ” ê²ƒ byteë°°ì—´ë¡œ. íŠ¹íˆ í•œê¸€ì´ ìˆìœ¼ë‹ˆê¹Œ byteë°°ì—´
+			//512ì€ ì—¬ìœ ë¡­ê²Œ ì¡ì•„ë†“ê³  í•œë²ˆì— ì½ì–´ë“¤ì´ëŠ” ê²ƒì´ë‹ˆê¹Œ whileë¬¸ ì•ˆì¨ë„ ëœë‹¤.
+			int number = fis.read(buffer);  //ì½ì–´ë“¤ì¸ ê²ƒì„ bufferì— ë„£ì—ˆê³  ê·¸ ì–‘ë§Œí¼ number
+			String str = new String(buffer, 0, number); //byteë°°ì—´ì„ stringìœ¼ë¡œ ë°”ê¾¸ê¸° ìœ„í•´ì„œ stringìƒì„±ì. íŒŒë¼ë¯¸í„°1 - ë°”ì´íŠ¸ë°°ì—´ / íŒŒë¼ë¯¸í„°2 - ì²˜ìŒë¶€í„°~ / íŒŒë¼ë¯¸í„°3 - numberê°œ // cf) Stringì„ byteë¡œ ë°”ê¾¸ë ¤ë©´ getBytes
+			StringTokenizer st = new StringTokenizer(str, "\n"); //ì—”í„°ê¸°ì¤€ìœ¼ë¡œ ì§œë¦„ (ì—¬ê¸°ì„œ ê°ê° ìë¥¸ ê²ƒì€ ë¬´ì¡°ê±´ ë‹¤ stringìœ¼ë¡œ ë°›ëŠ”ë‹¤)
 			String [] array = new String[st.countTokens()];
 			list = new ArrayList<Member>(3);
 			for(int i = 0 ; i < array.length ; i++) {
-				array[i] = st.nextToken();   //array[0] = ÇÑÁö¹Î  24  aaa@aaa.com
-				Scanner scan = new Scanner(array[i]).useDelimiter("\\s+"); //½ºÆäÀÌ½º¹Ù 1Ä­ÀÌ»ó µÈ °æ¿ì ´Ù ÀÚ¸§.
-				//useDelimiter´Â Á¤±Ô½ÄÀ» ¾µ ¼ö ÀÖ±â¿¡ StringTokenizerº¸´Ù ´õ ÆíÇÏ´Ù. STringTokenizer´Â Á¤È®ÇÏ°Ô ¸î Ä­ ¶ç¿ü´ÂÁö µî¿¡ ´ëÇØ¼­ ¾Ë¾Æ¾ß ÇÑ´Ù.
-				Member member = new Member(scan.next(), scan.nextInt(), scan.next());  //next, nextint, next´Â °¢°¢ ±ÛÀÚ(ÇÑÁö¹Î) Á¤¼ö(24) ±ÛÀÚ(@¸ŞÀÏ~)
+				array[i] = st.nextToken();   //array[0] = í•œì§€ë¯¼  24  aaa@aaa.com
+				Scanner scan = new Scanner(array[i]).useDelimiter("\\s+"); //ìŠ¤í˜ì´ìŠ¤ë°” 1ì¹¸ì´ìƒ ëœ ê²½ìš° ë‹¤ ìë¦„.
+				//useDelimiterëŠ” ì •ê·œì‹ì„ ì“¸ ìˆ˜ ìˆê¸°ì— StringTokenizerë³´ë‹¤ ë” í¸í•˜ë‹¤. STringTokenizerëŠ” ì •í™•í•˜ê²Œ ëª‡ ì¹¸ ë„ì› ëŠ”ì§€ ë“±ì— ëŒ€í•´ì„œ ì•Œì•„ì•¼ í•œë‹¤.
+				Member member = new Member(scan.next(), scan.nextInt(), scan.next());  //next, nextint, nextëŠ” ê°ê° ê¸€ì(í•œì§€ë¯¼) ì •ìˆ˜(24) ê¸€ì(@ë©”ì¼~)
 				list.add(member);
 			}
-				// System.out.println(array[2]); ÀÌ·¸°Ô Âï¾îº¸¸é ¸î ¹øÂ° ¹æ¿¡ ¹¹°¡ ÀÖ´ÂÁö ¾Ë ¼ö ÀÖ´Ù. ¹ÚÁö¹Î 44 ccc@ccc.com
+				// System.out.println(array[2]); ì´ë ‡ê²Œ ì°ì–´ë³´ë©´ ëª‡ ë²ˆì§¸ ë°©ì— ë­ê°€ ìˆëŠ”ì§€ ì•Œ ìˆ˜ ìˆë‹¤. ë°•ì§€ë¯¼ 44 ccc@ccc.com
 		} catch (FileNotFoundException ex) {
 			System.out.println("File Not Found");
 		} catch(IOException ex) {
