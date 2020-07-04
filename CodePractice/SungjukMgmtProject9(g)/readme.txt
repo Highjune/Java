@@ -26,4 +26,10 @@ Init
 C:/temp에서 sungjuklist.ser 지우고 시작
 (처음에 이 파일이 없어서 만들면 vector는 null, 있는데 vector를 저장한 적이 없어서 null)
 
+Student - 직렬화 가능한 클래스로 생성
+Main - 경로를 init에 넣고, init()으로 vector를 리턴한 후에 그것을 input, calc, sort, output에 넣음. output에는 경로도 같이.
+Init - 생성자에 읽어들일 파일의 위치에 대한 세팅, init()메서드는 해당 위치에 대한 객체 읽어들이고, vector<Student>를 리턴(만약 기존 객체가 있다면 객체 그대로, 없다면 새로운 vector)
+Input - do-while로 입력값 받고 싶은 만큼(y라면) 받기.
+Calc - Collections.sort로
+Output - 
 
