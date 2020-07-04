@@ -32,5 +32,5 @@ Init - 생성자에 읽어들일 파일의 위치에 대한 세팅, init()메서
 Input - do-while로 입력값 받고 싶은 만큼(y라면) 받기.
 Calc - vector의 것 하나하나 다 계산해서 총점, 평균, 등급까지.
 Sort - Collections.sort로
-Output - 생성자에 vector와 path를 넣어서 ObjectOutputStream할 곳 세팅. output() 에서는 writeObject
+Output - 생성자에 vector와 path를 넣어서 ObjectOutputStream할 곳 세팅. output() 에서는 writeObject, 경로는 = "C:/temp/sungjuklist.ser"
 
