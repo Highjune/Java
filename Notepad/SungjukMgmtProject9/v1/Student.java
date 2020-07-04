@@ -6,17 +6,14 @@ public class Student implements Serializable{
 	private double avg;
 	private char grade;
 	
-	public Student(String hakbun, String name, int kor, int eng, int mat, int tot, double avg, char grade) {
+	public Student(String hakbun, String name, int kor, int eng, int mat) {
 		this.hakbun = hakbun;
 		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
 		this.mat = mat;
-		this.tot = tot;
-		this.avg = avg;
-		this.grade = grade;
-		
 	}
+	
 	public String getHakbun() {
 		return hakbun;
 	}

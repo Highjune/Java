@@ -30,7 +30,6 @@ public class Init {
 	
 	public Vector<Student>  init() {
 		Object obj  = null;
-		
 		if(this.ois != null)
 			try {
 				obj = this.ois.readObject();
@@ -43,11 +42,10 @@ public class Init {
 			}
 		
 		if(ois != null &&  obj != null) {
-			return(Vector<Student>)obj;
+			return (Vector<Student>)obj;
 		}else {
 			return new Vector<Student>(1, 1);
 		}
-		
 	}
 }
 
