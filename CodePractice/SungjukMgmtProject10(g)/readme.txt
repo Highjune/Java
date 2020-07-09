@@ -2,6 +2,7 @@
 2티어(window10 - client, linux utuntu - Server)
 Jdbc - DB연동(mariadb)해서 프로그램 작성  - 192.168.56.2 virtualbox에 있는 것
 
+해당프로젝트 우클릭 - build path - driver 추가
 UI를 통해서 입력받고 데이터는 DB에 저장 (insert만). 저장 후 heidSQL에서 확인가능
 학번, 이름, 국어, 영어, 수학을 입력받아서 DB에 저장
 	
