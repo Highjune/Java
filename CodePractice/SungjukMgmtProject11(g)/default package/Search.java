@@ -7,34 +7,34 @@ import java.util.Scanner;
 import com.example.libs.DBClose;
 import com.example.libs.DBConnection;
 
-public class Search { //1¸íÀÇ ÇĞ»ıÀ» Ã£´Â °Í
+public class Search { //1ëª…ì˜ í•™ìƒì„ ì°¾ëŠ” ê²ƒ
 	private Scanner scan;
 	private Connection conn;
 	
-	//primary key(ÇĞ¹ø)À¸·Î °Ë»èÇÏ´Ï±ñ 1¸íÀÌ ³ª¿Ã °Í.
+	//primary key(í•™ë²ˆ)ìœ¼ë¡œ ê²€ìƒ‰í•˜ëŠ” ê²ƒì´ë‹ˆ 1ëª…ì´ ë‚˜ì˜¬ ê²ƒ.
 	public Search(Scanner scan) { 
 		this.scan = scan;
 		this.conn = DBConnection.getConnection("mariadb.properties");  //3. 
 	}
 	
-	public Student search() { //Ã£Àº ÇĞ»ıÀ» ¸®ÅÏ
-		Statement stmt = null;
+	public Student search() { //ì°¾ì€ í•™ìƒì„ ë¦¬í„´
+		Statement stmt = null; //ì§€ì—­ë³€ìˆ˜ ì•ì—ëŠ” private, public ë“± ëª» ë„£ìŒ. ì§€ì—­ë³€ìˆ˜ëŠ” ìë™ private.
 		ResultSet rs = null;
 		Student s = null;
 		try {
 			stmt = this.conn.createStatement();    //4.
-			System.out.print("Ã£À¸·Á´Â ÇĞ»ıÀÇ ÇĞ¹ø : ");
+			System.out.print("ì°¾ìœ¼ë ¤ëŠ” í•™ìƒì˜ í•™ë²ˆ : ");
 			String hakbun = this.scan.next();
 			String sql = "SELECT hakbun, name, kor, eng, mat FROM project.Student " +
 			                 "WHERE hakbun = '" + hakbun + "' ";
-			rs = stmt.executeQuery(sql);   //5.  rs(Resultset)¿¡ SELECTÇÑ °ªµéÀÌ ´Ù ´ã°ÜÀÖÀ½.
+			rs = stmt.executeQuery(sql);   //5.  rs(Resultset)ì— SELECTí•œ ê°’ë“¤ì´ ë‹¤ ë‹´ê²¨ìˆìŒ.
 			
-			//ÇĞ»ıÀ» Ã£¾ÒÀ» °æ¿ì, Ã£Àº ·¹ÄÚµåÀÇ ÁÙ (ÇÑ ÁÙ¿¡ hakbun, name, kor, eng, mat ´Ù µé¾îÀÖÀ½) ¹Ù·Î À§¿¡ Ä¿¼­°¡ À§Ä¡ÇØ ÀÖ´Ù.
-			if(rs.next()) {  //ÇĞ»ıÀ» Ã£¾ÒÀ» °æ¿ì  //6.
+			//í•™ìƒì„ ì°¾ì•˜ì„ ê²½ìš°, ì°¾ì€ ë ˆì½”ë“œì˜ ì¤„ (í•œ ì¤„ì— hakbun, name, kor, eng, mat ë‹¤ ë“¤ì–´ìˆìŒ) ë°”ë¡œ ìœ„ì— ì»¤ì„œê°€ ìœ„ì¹˜í•´ ìˆë‹¤.
+			if(rs.next()) {  //í•™ìƒì„ ì°¾ì•˜ì„ ê²½ìš°  //6.  // (rs!=null) ë¡œ í•˜ë©´ ì•ˆë¨
 				s = new Student(rs.getString("hakbun"), rs.getString("name"),
 						              rs.getInt("kor"), rs.getInt("eng"), rs.getInt("mat"));
-			}else { //Ã£Áö ¸øÇßÀ¸¸é ·¹ÄÚµå°¡ ¾øÀ» °ÍÀÌ°í ±×·¯¸é Ä¿¼­°¡ next¸¦ ÇÒ ¼ö ¾ø´Ù. ±×·¯¸é nullÀÌ ³Ñ¾î°¥ °ÍÀÓ. ¿ø·¡ s´Â null·Î ÃÊ±âÈ­ÇßÀ¸´Ï±î.(À§¿¡¼­)
-				System.out.println("Á¶°Ç¿¡ ¸Â´Â ÇĞ»ıÀ» Ã£Áö ¸øÇß½À´Ï´Ù. È®ÀÎ ÈÄ ´Ù½Ã °Ë»öÇØ ÁÖ¼¼¿ä.");
+			}else { //ì°¾ì§€ ëª»í–ˆìœ¼ë©´ ë ˆì½”ë“œê°€ ì—†ì„ ê²ƒì´ê³  ê·¸ëŸ¬ë©´ ì»¤ì„œê°€ nextë¥¼ í•  ìˆ˜ ì—†ë‹¤. ê·¸ëŸ¬ë©´ nullì´ ë„˜ì–´ê°ˆ ê²ƒì„. ì›ë˜ sëŠ” nullë¡œ ì´ˆê¸°í™”í–ˆìœ¼ë‹ˆê¹Œ.(ìœ„ì—ì„œ)
+				System.out.println("ì¡°ê±´ì— ë§ëŠ” í•™ìƒì„ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤. í™•ì¸ í›„ ë‹¤ì‹œ ê²€ìƒ‰í•´ ì£¼ì„¸ìš”.");
 			}
 		}catch(SQLException ex) {
 			System.out.println(ex);
