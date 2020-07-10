@@ -7,12 +7,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class DBConnection { //ConnectionÀ» ¸®ÅÏÇØÁÖ±â ¶§¹®¿¡ ÀÌ·¸°Ô ¸¸µé¾îµÎ¸é È°¿ëµµ ³ô´Ù.
-	public static Connection getConnection(String filename) { //ÆÄÀÏÀÇ ÀÌ¸§¿¡ µû¶ó(oracle.properties / maria.properties µî¿¡ µû¶ó ´Ù ÀÌ°ÍÀ¸·Î¸¸ ´Ù È°¿ëÇÒ ¼ö ÀÖ´Ù
+public class DBConnection { //Connectionì„ ë¦¬í„´í•´ì£¼ê¸° ë•Œë¬¸ì— ì´ë ‡ê²Œ ë§Œë“¤ì–´ë‘ë©´ í™œìš©ë„ ë†’ë‹¤.
+	public static Connection getConnection(String filename) { //íŒŒì¼ì˜ ì´ë¦„ì— ë”°ë¼(oracle.properties / maria.properties ë“±ì— ë”°ë¼ ë‹¤ ì´ê²ƒìœ¼ë¡œë§Œ ë‹¤ í™œìš©í•  ìˆ˜ ìˆë‹¤)
+		
 		Connection conn = null;
 		try {
-			Properties info = new Properties();
-			info.load(new FileInputStream(new File(filename))); //properties¿¡´Â ÀÌ·¸°Ô ÆÄÀÏÀ» ºÒ·¯¿À´Â load°¡ ÀÖ´Ù.
+			Properties info = new Properties();  //.propertiesíŒŒì¼ì´ propertiesê°ì²´ê°€ ë˜ëŠ” ê²ƒì„.
+			info.load(new FileInputStream(new File(filename))); //propertiesì—ëŠ” ì´ë ‡ê²Œ íŒŒì¼ì„ ë¶ˆëŸ¬ì˜¤ëŠ” loadê°€ ìˆë‹¤.
 			Class.forName(info.getProperty("db.driver"));
 		    conn = DriverManager.getConnection(
 					info.getProperty("db.url"), info.getProperty("db.user"),
