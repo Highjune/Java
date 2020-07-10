@@ -21,3 +21,23 @@ https://youtu.be/hLNrLmPwahQ 20분까지
 cf) 
 오라클의 스키마 - 계정
 mariadb 스키마 - 데이터베이스
+
+Student - 직렬화, hakbun, name, kor, eng, mat, tot, avg, grade, get/set, toString까지
+(default pacakage)
+Main - 생성자에 new Scanner(System.in), process함수, showmenu 함수(1. 전체학생보기, 2. 학생등록, 3. 학생조회, 4. 학생정보수정, 5. 학생삭제, 6. 파일로 백업하기, 7. 종료하기)
+Input - 생성자에 scan, conn, calc 초기화, do-while로 입력받기, insert까지
+Calc - tot, avg, grade 계산
+Search - 생성자에 scan(메인에서 넘겨받음), conn 초기화, search함수에서 select sql 보내서 resultSet 들고오기
+Update - 생성자에 scan(메인에서 넘겨받음), conn 초기화, update함수에서 Student 받아서 수정하고 insert sql까지.
+Delete - 생성자에서 conn 초기화, delete함수에서 deletesql 보내기
+Output - 백업하는 output1함수, 화면에 출력하는 output함수. output1함수는 backup.ser로 내보내는 것.
+
+(com.example.libs 패키지)
+DBClose - Connection만, Connection과 Statement만, Connection, Statement, ResultSet까지 다 각각 파라미터로 받는 함수 생성
+DBConnection - 파일이름(mariadb.properties) 받아서 연결하는 것.
+
+mariadb.properties - db.driver, db.url, db.user, db.password 정의
+sungjukmgmt.sql - 테이블 정의
+
+
+
