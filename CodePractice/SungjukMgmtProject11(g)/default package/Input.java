@@ -41,7 +41,7 @@ public class Input {
 				int row = stmt.executeUpdate(sql);
 				if(row == 1) System.out.println("Insert Success");
 				System.out.print("Again(y/n) ? : "); 
-				y_n = this.scan.next();
+				y_n = this.scan.next(); 
 			}while(y_n.toUpperCase().equals("Y"));
 		}catch(SQLException ex) {
 			System.out.println(ex);
