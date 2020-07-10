@@ -23,11 +23,11 @@ public class Input {
 		try{
 			stmt = this.conn.createStatement();  //4. 
 			do {
-				System.out.print("학번 : ");  String hakbun = scan.next();
-				System.out.print("이름 : ");  String name = scan.next();
-				System.out.print("국어 : ");  int kor = scan.nextInt();
-				System.out.print("영어 : ");  int eng = scan.nextInt();
-				System.out.print("수학 : ");  int mat = scan.nextInt();
+				System.out.print("hakbun : ");  String hakbun = scan.next();
+				System.out.print("name : ");  String name = scan.next();
+				System.out.print("kor : ");  int kor = scan.nextInt();
+				System.out.print("eng : ");  int eng = scan.nextInt();
+				System.out.print("mat : ");  int mat = scan.nextInt();
 			
 				Student s = new Student(hakbun, name, kor, eng, mat);
 				this.calc.calc(s);
