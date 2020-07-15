@@ -1,15 +1,15 @@
-//sonataÅ¬·¡½ºÀÇ ºÎ¸ğ
+//sonataí´ë˜ìŠ¤ì˜ ë¶€ëª¨
 
 
 public class Car {
 	private String name;
-	public Car(String names) {
+	public Car(String name) {
 		this.name = name;
 	}
-	public String getName() {return this.name;} // PolymorphismDemo3 ¿¡¼­ ½á¸ÔÀ»·Á°í
+	public String getName() {return this.name;} // PolymorphismDemo3 ì—ì„œ ì¨ë¨¹ì„ë ¤ê³ 
 	
 	public void repair() {
-		System.out.println(this.name + "°¡ ¼ö¸®µÆ½À´Ï´Ù.");
+		System.out.println(this.name + "ê°€ ìˆ˜ë¦¬ëìŠµë‹ˆë‹¤.");
 	}
 }
 
