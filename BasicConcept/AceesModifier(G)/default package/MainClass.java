@@ -1,7 +1,7 @@
 /*
  * class : public, (default), abstract, final
  * method : public, (default), protected, private, static, final, abstract,
- * variable : public, (default), protected, private, static, final
+ * variable : public, (default), protected, private, static, final 
  */
 
 import kr.co.sist.libs.Student;
@@ -9,6 +9,6 @@ import kr.co.sist.libs.Student;
 public class MainClass extends Student{
 	public static void main(String[] args) {
 //		Student s = new Student();
-		MainClass mc = new MainClass(); //³ª ÀÚ½ÄÀ» ¸¸µé¸é, ³»°ÍÀº ¹°·Ğ ¾Æ¹öÁö°Íµµ ¾µ ¼ö ÀÖ´Â °ÍÀÓ
+		MainClass mc = new MainClass(); //ë‚˜ ìì‹ì„ ë§Œë“¤ë©´, ë‚´ê²ƒì€ ë¬¼ë¡  ì•„ë²„ì§€ê²ƒë„ ì“¸ ìˆ˜ ìˆëŠ” ê²ƒì„
 	}
 }
