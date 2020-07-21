@@ -1,7 +1,7 @@
 # Java 
 
-*CodePractice
-*Notepad
-*UserfulCode
-*BasicConcept
-*FirstProject
+* CodePractice
+* Notepad
+* UserfulCode
+* BasicConcept
+* FirstProject
