@@ -7,7 +7,7 @@ public class Output {
 		this.vector = vector;
 	}
 	
-	public void output() {
+	public void output() { 
 		printlabel();
 		for(Student s : this.vector) {
 			System.out.println(s.toString());
