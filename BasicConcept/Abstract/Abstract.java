@@ -1,10 +1,10 @@
-//ÀÚ¹ÙÀÇ Á¤¼® p377
-//Ãß»óÈ­ (´ÙÇü¼ºÀÇ °­Á¦È­)
-//ÀÚ½ÄÀ» ³º¾Æ¼­ ±×°ÍÀ» ÅëÇØ °´Ã¼ »ı¼º. ±×·¡¼­ ¹İµå½Ã (½ÇÃ¼°¡ ÀÖÀ¸´Ï) ÀÚ½ÄÀ» ³º¾Æ¾ß µÈ´Ù. ÀÚ±âÀÚ½Å(ºÎ¸ğ)´Â ½ÇÃ¼°¡ ¾øÀ¸´Ï(Ãß»óÀÌ´Ï±î)
-
+//ìë°”ì˜ ì •ì„ p377
+//ì¶”ìƒí™” (ë‹¤í˜•ì„±ì˜ ê°•ì œí™”)
+//ìì‹ì„ ë‚³ì•„ì„œ ê·¸ê²ƒì„ í†µí•´ ê°ì²´ ìƒì„±. ê·¸ë˜ì„œ ë°˜ë“œì‹œ (ì‹¤ì²´ê°€ ìˆìœ¼ë‹ˆ) ìì‹ì„ ë‚³ì•„ì•¼ ëœë‹¤. ìê¸°ìì‹ (ë¶€ëª¨)ëŠ” ì‹¤ì²´ê°€ ì—†ìœ¼ë‹ˆ(ì¶”ìƒì´ë‹ˆê¹Œ)
+ 
 public class Abstract {
 	public static void main(String[] args) {
-//		Birds buz = new Birds(); 	 //ÇÏ¸é ¿¡·¯³²
+//		Birds buz = new Birds(); 	 //í•˜ë©´ ì—ëŸ¬ë‚¨
 		Birds buz = new Sparow(); 	 
 		
 		buz.display();
@@ -12,10 +12,10 @@ public class Abstract {
 	}
 }
 
-abstract class Birds{   //abstractÀ» ºÙÀÌ¸é ½ÇÁ¦·Î Á¸ÀçÇÏÁö ¾Ê±â ¶§¹®¿¡ °´Ã¼ »ı¼ºÀÎ new Birds(); ÀÚÃ¼°¡ ¾ÈµÈ´Ù.
+abstract class Birds{   //abstractì„ ë¶™ì´ë©´ ì‹¤ì œë¡œ ì¡´ì¬í•˜ì§€ ì•Šê¸° ë•Œë¬¸ì— ê°ì²´ ìƒì„±ì¸ new Birds(); ìì²´ê°€ ì•ˆëœë‹¤.
 	int numOfWings = 2;
 	public void display() {
-		System.out.println("»õ°¡ ³¯´Ù.");
+		System.out.println("ìƒˆê°€ ë‚ ë‹¤.");
 	}
 }
 class Sparow extends Birds{
