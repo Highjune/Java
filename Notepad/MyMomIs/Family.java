@@ -4,3 +4,4 @@ public class Family {
 	int age, cleaning, raising, love, effort, tot;
 	double avg;
 }
+ 
