@@ -1,21 +1,21 @@
-//anonymous class(ÀÚ¹ÙÀÇ Á¤¼® 410) ¿Í local class¸¦ ¾î¶»°Ô ¾µÁö~
-//event¸¦ ÀÌ¿ëÇÏ¿© ~ 
+//anonymous class(ìë°”ì˜ ì •ì„ 410) ì™€ local classë¥¼ ì–´ë–»ê²Œ ì“¸ì§€~
+//eventë¥¼ ì´ìš©í•˜ì—¬ ~ 
 //
 
-import java.awt.*;
-import java.awt.event.*; //1. importÇÑ´Ù
+import java.awt.*; 
+import java.awt.event.*; //1. importí•œë‹¤
 
-public class EventDemo { //2. implements ÇÑ´Ù.
+public class EventDemo { //2. implements í•œë‹¤.
 	public static void main(String[] args) {
-		Frame f = new Frame("³ª´Â À©µµ¿ì ÇÁ·Î±×·¥");
+		Frame f = new Frame("ë‚˜ëŠ” ìœˆë„ìš° í”„ë¡œê·¸ë¨");
 		Button clickme = new Button("Click Me!!!");
 		clickme.setBackground(Color.RED);
 		clickme.addActionListener(new ActionListener() { // local class
 			@Override
-			public void actionPerformed(ActionEvent e) { //3. Override ÇÑ´Ù.
+			public void actionPerformed(ActionEvent e) { //3. Override í•œë‹¤.
 				f.setBackground(Color.CYAN);
 			}
-		});   ////¸Ş¼­µå ¾È¿¡ Å¬·¡½º°¡ µé¾î°¡°í, ±× ¾È¿¡¼­ overrideÇÏ°í ~ .
+		});   ////ë©”ì„œë“œ ì•ˆì— í´ë˜ìŠ¤ê°€ ë“¤ì–´ê°€ê³ , ê·¸ ì•ˆì—ì„œ overrideí•˜ê³  ~ .
 		f.add(BorderLayout.NORTH, clickme);
 		f.setBackground(Color.YELLOW);
 		f.setSize(500, 400);
