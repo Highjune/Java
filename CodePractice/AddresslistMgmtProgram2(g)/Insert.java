@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+ 
 public class Insert {
 	private  ArrayList<Person> list;
 	private Scanner scan;
@@ -10,15 +10,15 @@ public class Insert {
 		this.scan = scan;
 	}
 	public void insert() {
-		System.out.print("È¸¿ø ¹øÈ£ : ");
+		System.out.print("íšŒì› ë²ˆí˜¸ : ");
 		int number = this.scan.nextInt();
-		this.scan.nextLine();   //enter key ³¯¸®±â
-		System.out.print("ÀÌ¸§ : ");
+		this.scan.nextLine();   //enter key ë‚ ë¦¬ê¸°
+		System.out.print("ì´ë¦„ : ");
 		String name = this.scan.nextLine();
-		System.out.print("ÀüÈ­¹øÈ£ : ");
+		System.out.print("ì „í™”ë²ˆí˜¸ : ");
 		String tel = this.scan.next();
-		this.scan.nextLine();   //enter key ³¯¸®±â
-		System.out.print("ÁÖ¼Ò : ");
+		this.scan.nextLine();   //enter key ë‚ ë¦¬ê¸°
+		System.out.print("ì£¼ì†Œ : ");
 		String address = this.scan.nextLine();
 		Person person = new Person(number, name, tel, address);
 		this.list.add(person);
