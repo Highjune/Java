@@ -1,29 +1,29 @@
-//ÀÜµ· ±¸ÇÏ´Â ¹ı
+//ì”ëˆ êµ¬í•˜ëŠ” ë²•
 import java.util.Scanner;
 
 public class MethodDemo1 {
 	public static void main(String[] args) {
 		MethodDemo1 md = new MethodDemo1();
 		Scanner scan = new Scanner(System.in); 
-		String y_n = null; //Áö¿ªº¯¼ö´Â ¹İµå½Ã ÃÊ±âÈ­, stringÀº ÂüÁ¶º¯¼ö´Ï null·Î.
+		String y_n = null; //ì§€ì—­ë³€ìˆ˜ëŠ” ë°˜ë“œì‹œ ì´ˆê¸°í™”, stringì€ ì°¸ì¡°ë³€ìˆ˜ë‹ˆ nullë¡œ.
 		do {
 			int money = md.input(scan);
 			md.output(money);
 			System.out.print("Again(y/n) ? : ");
-//			Scanner scan = new Scanner(System.in); ¿©±â¼­ ¾²¸é loopµ¹ ¶§ °Ô¼Ó ½á¾ß µÇ´Ï À§¿¡ ¾¸.
+//			Scanner scan = new Scanner(System.in); ì—¬ê¸°ì„œ ì“°ë©´ loopëŒ ë•Œ ê²Œì† ì¨ì•¼ ë˜ë‹ˆ ìœ„ì— ì”€.
 			y_n = scan.next();
-		}while(y_n.equals("Y") || y_n.equals("y")); //equals´Â ¸â¹öº¯¼öÀÌ±â ¶§¹®¿¡ ÁÖ¼Ò·Î Á¢±Ù. y_n¿¡´Â Y, NÀÌ ÀúÀåµÇ¾î ÀÖ´Ù. equals¸¦ API¿¡¼­ Ã£¾Æº¸¸é java.lang - String - equals ¿¡¼­ º¸¸é ¸â¹öº¯¼öÀÓ(staticÀÌ ¾È ºÙ¾î¼­). ¸â¹öº¯¼ö´Ï±î ÁÖ¼Ò(y_n_·Î Á¢±Ù
+		}while(y_n.equals("Y") || y_n.equals("y")); //equalsëŠ” ë©¤ë²„ë³€ìˆ˜ì´ê¸° ë•Œë¬¸ì— ì£¼ì†Œë¡œ ì ‘ê·¼. y_nì—ëŠ” Y, Nì´ ì €ì¥ë˜ì–´ ìˆë‹¤. equalsë¥¼ APIì—ì„œ ì°¾ì•„ë³´ë©´ java.lang - String - equals ì—ì„œ ë³´ë©´ ë©¤ë²„ë³€ìˆ˜ì„(staticì´ ì•ˆ ë¶™ì–´ì„œ). ë©¤ë²„ë³€ìˆ˜ë‹ˆê¹Œ ì£¼ì†Œ(y_n_ë¡œ ì ‘ê·¼
 }
 	
-	int input(Scanner scan){  // staticº¯¼ö´Â °øÀ¯¶ó¼­ À¢¸¸ÇØ¼± ¾È ¾²´Â °ÍÀÌ ÁÁ´Ù
-			System.out.print("Money : ");
+	int input(Scanner scan){  // staticë³€ìˆ˜ëŠ” ê³µìœ ë¼ì„œ ì›¬ë§Œí•´ì„  ì•ˆ ì“°ëŠ” ê²ƒì´ ì¢‹ë‹¤
+		System.out.print("Money : ");
 		return scan.nextInt();
 }
 	
-	void output(int money){ //Ãâ·ÂÇÒ°Å´Ï±ñ ¸®ÅÏX, ±×·¡¼­ void.
+	void output(int money){ //ì¶œë ¥í• ê±°ë‹ˆê¹ ë¦¬í„´X, ê·¸ë˜ì„œ void.
 		int [] array = {50000, 10000, 5000, 1000, 500, 100, 50, 10, 5, 1};
 		for(int i = 0; i< array.length; i++) {
-			System.out.println(array[i] + "¿ø : " + money/array[i] );
+			System.out.println(array[i] + "ì› : " + money/array[i] );
 			money = money % array[i];
 		}
 	}
