@@ -1,4 +1,4 @@
-//±º¼ö¿­
+// 1~n íŠ¹ì •í•œ ìˆ˜ê¹Œì§€ì˜ í•©
 public class SequencePlus{
 	public static void main(String[] args) {
 		int sum = 0;
