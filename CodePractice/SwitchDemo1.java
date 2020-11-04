@@ -1,5 +1,6 @@
 import java.util.Scanner;
-
+// ì£¼ì‚¬ìœ„ ë˜ì ¸ì„œ ì»´í„°ë‘ ë¶™ê¸°
+//ëœë¤ìœ¼ë¡œ ë˜ì§€ëŠ” ì»´í“¨í„°ì˜ ì£¼ì‚¬ìœ„ì™€ ë‚´ê°€ ì…ë ¥í•˜ëŠ” ì£¼ì‚¬ìœ„ì˜ ìˆ˜ë¥¼ ë¹„êµ
 public class SwitchDemo1 {
 public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
@@ -7,10 +8,10 @@ public static void main(String[] args) {
 	System.out.print("Insert a value(1~6) : ");
 	int user_rand = scan.nextInt();
 	if(user_rand <1 || user_rand > 6) {
-		System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-		System.exit(-1);                					///ÀÌ±îÁö 1~6±îÁö ³ª¿Ã ¼ö ÀÖµµ·Ï ÇÊÅÍ¸µ ÇßÀ½.
+		System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+		System.exit(-1);                					///ì´ê¹Œì§€ 1~6ê¹Œì§€ ë‚˜ì˜¬ ìˆ˜ ìˆë„ë¡ í•„í„°ë§ í–ˆìŒ.
 	}
-	System.out.printf("ÄÄÇ»ÅÍÀÇ °ª = %d, À¯ÀúÀÇ °ª = %d\n", comp_rand, user_rand);
+	System.out.printf("ì»´í“¨í„°ì˜ ê°’ = %d, ìœ ì €ì˜ ê°’ = %d\n", comp_rand, user_rand);
 	if(comp_rand > user_rand) {
 		System.out.println("Computer Win.");
 	}else if(comp_rand < user_rand) {

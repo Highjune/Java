@@ -1,29 +1,29 @@
 import java.util.Scanner;
 import java.util.Calendar;
 
-public class Today_Test_0108_Teacher {
+public class ZodianSign {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
 		Calendar now = Calendar.getInstance();
 		int current_year = now.get(Calendar.YEAR);
 		
-		System.out.print("ÀÌ¸§ : "); String name = scan.next();
-		System.out.print("Ãâ»ı³âµµ : "); int born_year = scan.nextInt();
-		System.out.printf("%s(%d¼¼)´Ô!", name, (current_year-born_year +1));
+		System.out.print("ì´ë¦„ : "); String name = scan.next();
+		System.out.print("ì¶œìƒë…„ë„ : "); int born_year = scan.nextInt();
+		System.out.printf("%s(%dì„¸)ë‹˜!", name, (current_year-born_year +1));
 		switch(born_year%12) {
-		case 0 : System.out.println("¿ø¼şÀÌ¶ìÀÔ´Ï´Ù."); break;
-		case 1 : System.out.println("´ß¶ìÀÔ´Ï´Ù."); break;
-		case 2 : System.out.println("°³¶ìÀÔ´Ï´Ù."); break;
-		case 3 : System.out.println("µÅÁö¶ìÀÔ´Ï´Ù."); break;
-		case 4 : System.out.println("Áã¶ìÀÔ´Ï´Ù."); break;
-		case 5 : System.out.println("¼Ò¶ìÀÔ´Ï´Ù."); break;
-		case 6 : System.out.println("¹ü¶ìÀÔ´Ï´Ù."); break;
-		case 7 : System.out.println("Åä³¢¶ìÀÔ´Ï´Ù."); break;
-		case 8 : System.out.println("¿ë¶ìÀÔ´Ï´Ù."); break;
-		case 9 : System.out.println("¹ì¶ìÀÔ´Ï´Ù."); break;
-		case 10 : System.out.println("¸»¶ìÀÔ´Ï´Ù."); break;
-		default : System.out.println("¾ç¶ìÀÔ´Ï´Ù."); break;
+		case 0 : System.out.println("ì›ìˆ­ì´ë ì…ë‹ˆë‹¤."); break;
+		case 1 : System.out.println("ë‹­ë ì…ë‹ˆë‹¤."); break;
+		case 2 : System.out.println("ê°œë ì…ë‹ˆë‹¤."); break;
+		case 3 : System.out.println("ë¼ì§€ë ì…ë‹ˆë‹¤."); break;
+		case 4 : System.out.println("ì¥ë ì…ë‹ˆë‹¤."); break;
+		case 5 : System.out.println("ì†Œë ì…ë‹ˆë‹¤."); break;
+		case 6 : System.out.println("ë²”ë ì…ë‹ˆë‹¤."); break;
+		case 7 : System.out.println("í† ë¼ë ì…ë‹ˆë‹¤."); break;
+		case 8 : System.out.println("ìš©ë ì…ë‹ˆë‹¤."); break;
+		case 9 : System.out.println("ë±€ë ì…ë‹ˆë‹¤."); break;
+		case 10 : System.out.println("ë§ë ì…ë‹ˆë‹¤."); break;
+		default : System.out.println("ì–‘ë ì…ë‹ˆë‹¤."); break;
 		
 		
 		}

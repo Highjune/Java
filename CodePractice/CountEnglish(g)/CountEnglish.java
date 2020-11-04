@@ -4,61 +4,64 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 
-	//constructor »ı¼ºÀÚ (»¡´ë ¿©´Â ¿ªÇÒ)
+	//constructor ìƒì„±ì (ë¹¨ëŒ€ ì—¬ëŠ” ì—­í• )
 	public class CountEnglish {
-		//ÆÄÀÏ·ÎºÎÅÍ ÀÔ·Â, Ç¥ÁØÃâ·Â(È­¸éÃâ·Â)
-		private BufferedInputStream bis;	//¿µ¹®ÀÚÀÌ¹Ç·Î byte´ÜÀ§·Î ÀĞ¾îµéÀÏ °ÍÀÌ°í, byte´ÜÀ§ÀÇ ÃÖ°íºÎ¸ğÀÎ BufferdInputStream(¹öÆÛ¸µÇØ¼­ ÀĞ¾îµéÀÌ´Â °ÍÀÌ¶ó¼­ È¿À² ³ô´Ù)
 		
-		private CountEnglish() throws IOException{//¿ÜºÎ¿¡¼­ »ı¼ºÇÏÁö´Â ¾ÊÀ» °ÍÀÌ´Ï private »ı¼ºÀÚ.
+		//íŒŒì¼ë¡œë¶€í„° ì…ë ¥, í‘œì¤€ì¶œë ¥(í™”ë©´ì¶œë ¥)
+		private BufferedInputStream bis;	//ì˜ë¬¸ìì´ë¯€ë¡œ byteë‹¨ìœ„ë¡œ ì½ì–´ë“¤ì¼ ê²ƒì´ê³ , byteë‹¨ìœ„ì˜ ìµœê³ ë¶€ëª¨ì¸ BufferdInputStream(ë²„í¼ë§í•´ì„œ ì½ì–´ë“¤ì´ëŠ” ê²ƒì´ë¼ì„œ íš¨ìœ¨ ë†’ë‹¤)
+		
+		private CountEnglish() throws IOException{//ì™¸ë¶€ì—ì„œ ìƒì„±í•˜ì§€ëŠ” ì•Šì„ ê²ƒì´ë‹ˆ private ìƒì„±ì.
 				File file = new File("usatoday.txt");
 				this.bis = new BufferedInputStream(
 						new FileInputStream(file));					
 		}
 
-	//Destructor ¼Ò¸êÀÚ(»¡´ë ´İ´Â ¿ªÇÒ)
-	@Override
-	protected void finalize() { //Object¿¡ ÀÖ´Â °ÍÀÌ´Ù.
-	if(this.bis != null) {//ÆÄÀÌÇÁ°¡ ¿­·ÁÀÖ´Ù¸é
-		try {
-			this.bis.close();
-		} catch (IOException e) {}
-		}
-	}	
+		//Destructor ì†Œë©¸ì(ë¹¨ëŒ€ ë‹«ëŠ” ì—­í• )
+		@Override
+		protected void finalize() { //Objectì— ìˆëŠ” ê²ƒì´ë‹¤.
+		if(this.bis != null) {//íŒŒì´í”„ê°€ ì—´ë ¤ìˆë‹¤ë©´
+			try {
+				this.bis.close();
+			} catch (IOException e) {}
+			}
+		}	
 	
 	
-	public static void main(String[] args) throws IOException {
-		CountEnglish ce = new CountEnglish();
-		int[] array = new int[52]; //´ë¹®ÀÚ 26, ¼Ò¹®ÀÚ 26°³, ¹è¿­ÀÇ Å¸ÀÔÀÌ intÀÌ¹Ç·Î °¢ ¹æÀº 0À¸·Î ÃÊ±âÈ­ µÇ¾îÀÖ´Ù.
-		int number = 0, count = 0; //count´Â ÀüÃ¼±ÛÀÚ¸¦ À§ÇØ
-		while((number = ce.bis.read()) >= 0) { //read()´Â 1byte¾¿ ÀĞ¾îµéÀÎ´Ù. -1ÀÌ µé¾î¿Ã ¶§±îÁö.
-			if(number >=65 && number <=90) {//´ë¹®ÀÚ (¹è¿­ 0~25±îÁö°¡ ´ë¹®ÀÚÀÇ ¹æ)
-				array[number-65]++; count++;
-			}else if (number >=97 && number <=122) {//¼Ò¹®ÀÚ(26~51±îÁö°¡ ¼Ò¹®ÀÚÀÇ ¹æ)
-				array[number-71]++; count++;
+	
+	
+		private void print(int[] array) {
+			int count = 0;
+			for(int i=0 ; i<26 ; i++) { //ëŒ€ë¬¸ì
+				System.out.printf("%c=%d\t", (char)(i+65), array[i]);
+				count++;
+				if(count % 5 ==0 ) System.out.println(); //í•œì¤„ì— 5ê°œì”© ì°ê¸° ìœ„í•´ì„œ.
+			}
+
+			System.out.println();
+
+			count = 0;
+			for(int i=26 ; i<array.length; i++) { //ì†Œë¬¸ì
+				System.out.printf("%c=%d\t", (char)(i+71), array[i]);
+				count++;
+				if(count % 5 ==0 ) System.out.println();
 			}
 		}
-		ce.print(array);
-		System.out.println("Total Count = " + count);
-	}
-	
-	private void print(int[] array) {
-		int count = 0;
-		for(int i=0 ; i<26 ; i++) { //´ë¹®ÀÚ
-			System.out.printf("%c=%d\t", (char)(i+65), array[i]);
-			count++;
-			if(count % 5 ==0 ) System.out.println(); //ÇÑÁÙ¿¡ 5°³¾¿ Âï±â À§ÇØ¼­.
-		}
 		
-		System.out.println();
-		
-		count = 0;
-		for(int i=26 ; i<array.length; i++) { //¼Ò¹®ÀÚ
-			System.out.printf("%c=%d\t", (char)(i+71), array[i]);
-			count++;
-			if(count % 5 ==0 ) System.out.println();
+		public static void main(String[] args) throws IOException {
+			CountEnglish ce = new CountEnglish();
+			int[] array = new int[52]; //ëŒ€ë¬¸ì 26, ì†Œë¬¸ì 26ê°œ, ë°°ì—´ì˜ íƒ€ì…ì´ intì´ë¯€ë¡œ ê° ë°©ì€ 0ìœ¼ë¡œ ì´ˆê¸°í™” ë˜ì–´ìˆë‹¤.
+			int number = 0, count = 0; //countëŠ” ì „ì²´ê¸€ìë¥¼ ìœ„í•´
+			while((number = ce.bis.read()) >= 0) { //read()ëŠ” 1byteì”© ì½ì–´ë“¤ì¸ë‹¤. -1ì´ ë“¤ì–´ì˜¬ ë•Œê¹Œì§€. ce.bis.read() ê°€ ì•ŒíŒŒë²³ í•˜ë‚˜ì”© ë¹¨ì•„ë“¤ì´ëŠ”ë°, numberëŠ” Aì¼ ê²½ìš° 65, aì¼ ê²½ìš° 97
+				if(number >=65 && number <=90) {//ëŒ€ë¬¸ì (ë°°ì—´ 0~25ê¹Œì§€ê°€ ëŒ€ë¬¸ìì˜ ë°©)
+					array[number-65]++; count++;
+				}else if (number >=97 && number <=122) {//ì†Œë¬¸ì(26~51ê¹Œì§€ê°€ ì†Œë¬¸ìì˜ ë°©)
+					array[number-71]++; count++;
+				}
+			}
+			ce.print(array);
+			System.out.println("Total Count = " + count);
 		}
-	}
-	
+
 }
 	
 
