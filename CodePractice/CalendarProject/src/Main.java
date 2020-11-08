@@ -1,8 +1,8 @@
 import java.util.Scanner;
-public class Main {
+public class Main { 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("¸î ³â, ¸î ¿ù ? : ");
+		System.out.print("ëª‡ ë…„, ëª‡ ì›” ? : ");
 		int year = scan.nextInt(); int month = scan.nextInt();
 		Main m = new Main();
 		int space  = m.getWeekday(year, month);
@@ -10,16 +10,16 @@ public class Main {
 		m.display(space, maxday);
 	}
 	
-	void display(int space, int maxday) {// ´Ş·ÂÀ» ±×¸®´Â methodÀÓ // space´Â Ã³À½¿¡ ¸îÄ­¶ç¿ö¾ß µÇ´ÂÁö.
-		//Ã¹ ÁÙ...
-		System.out.println("ìí\têÅ\tûı\tâ©\tÙÊ\tĞİ\t÷Ï");
+	void display(int space, int maxday) {// ë‹¬ë ¥ì„ ê·¸ë¦¬ëŠ” methodì„ // spaceëŠ” ì²˜ìŒì— ëª‡ì¹¸ë„ì›Œì•¼ ë˜ëŠ”ì§€.
+		//ì²« ì¤„...
+		System.out.println("æ—¥\tæœˆ\tç«\tæ°´\tæœ¨\tï¤Š\tåœŸ");
 		System.out.println("--------------------------------------------------------------------");
 		int count = 0;
 		for(int i = 0 ; i<space; i++) {
-			System.out.print("¡Ú\t"); count++; //ÂïÀ»¶§¸¶´Ù count¸¦ Çì¾Æ¸°´Ù.
+			System.out.print("â˜…\t"); count++; //ì°ì„ë•Œë§ˆë‹¤ countë¥¼ í—¤ì•„ë¦°ë‹¤.
 		}
 		for(int i = 1 ; i<=maxday ; i++) {
-			System.out.print(i+"\t"); count++; //i°¡ 1ÀÌ´Ï±î 
+			System.out.print(i+"\t"); count++; //iê°€ 1ì´ë‹ˆê¹Œ 
 			if(count % 7 ==0) {
 				System.out.println();
 			}
@@ -27,33 +27,33 @@ public class Main {
 	}
 	
 	
-	//¸¶Áö¸· ÁÙ º° Ãâ·ÂÇÏ±â
-	// ¸¶Áö¸·ÁÙ °ø¹é¿¡ º° ÂïÀ¸·Á¸é ¸¶Áö¸· ÁÙ ¿£ÅÍÇÑ ÈÄ¿¡ count=0 À¸·Î ÃÊ±âÈ­ ÇÏ°í ÀüÃ¼-count ¼ö ÇÏ¸é µÈ´Ù. ±×·±µ¥ 
-		//Åä¿äÀÏ³¯ ³¡³ª´Â ¼ø°£¿¡´Â ±×°Ô ¾ÈµÇ´Âµ¥, Åä¿äÀÏ³¯ ³¡³ª´Â ³¯¿¡´Â ¹°¾îºÁ¾ßµÈ´Ù.
+	//ë§ˆì§€ë§‰ ì¤„ ë³„ ì¶œë ¥í•˜ê¸°
+	// ë§ˆì§€ë§‰ì¤„ ê³µë°±ì— ë³„ ì°ìœ¼ë ¤ë©´ ë§ˆì§€ë§‰ ì¤„ ì—”í„°í•œ í›„ì— count=0 ìœ¼ë¡œ ì´ˆê¸°í™” í•˜ê³  ì „ì²´-count ìˆ˜ í•˜ë©´ ëœë‹¤. ê·¸ëŸ°ë° 
+		//í† ìš”ì¼ë‚  ëë‚˜ëŠ” ìˆœê°„ì—ëŠ” ê·¸ê²Œ ì•ˆë˜ëŠ”ë°, í† ìš”ì¼ë‚  ëë‚˜ëŠ” ë‚ ì—ëŠ” ë¬¼ì–´ë´ì•¼ëœë‹¤.
 //	if(count != 0) {
 //		for(int i = 0 ; i<(7-count) ; i++) {
-//			System.out.print("¡Ú\t");
+//			System.out.print("â˜…\t");
 //		}
 //		}
 //	
 	
 	
-	int getWeekday(int year, int month) {  //ÇØ´çÇÏ´Â ´ŞÀÇ 1ÀÏÀÌ ¹«½¼ ¿äÀÏÀÎÁö ¾Ë·ÁÁÜ
-		//1. ÃÑ ³¯¼ö °è»êÇÏ±â
+	int getWeekday(int year, int month) {  //í•´ë‹¹í•˜ëŠ” ë‹¬ì˜ 1ì¼ì´ ë¬´ìŠ¨ ìš”ì¼ì¸ì§€ ì•Œë ¤ì¤Œ
+		//1. ì´ ë‚ ìˆ˜ ê³„ì‚°í•˜ê¸°
 		int sum = 0;
-		for(int i = 1 ; i<year ; i++) {  //¼­±â 1³âºÎÅÍ ÀÛ³â±îÁö ´Ù µ¼, À±³âÀÌ¸é 366À» ¾Æ´Ï¸é 365À» ´õÇÔ
+		for(int i = 1 ; i<year ; i++) {  //ì„œê¸° 1ë…„ë¶€í„° ì‘ë…„ê¹Œì§€ ë‹¤ ë”, ìœ¤ë…„ì´ë©´ 366ì„ ì•„ë‹ˆë©´ 365ì„ ë”í•¨
 			if(isLeapYear(i)) sum += 366;
-			else sum += 365; //ÇØ´çÇÏ´Â ³âÀÇ ÇÑ ÇØ Àü¿¡ 12¿ù 31ÀÏ±îÁö ´Ù ´õÇßÀ½
+			else sum += 365; //í•´ë‹¹í•˜ëŠ” ë…„ì˜ í•œ í•´ ì „ì— 12ì›” 31ì¼ê¹Œì§€ ë‹¤ ë”í–ˆìŒ
 		}
 		for(int i = 1 ; i <=month ; i++) {
-			sum += getMaxDay(year, i);  // ÇØ´çÇÏ´Â ³âÀÇ 1¿ùºÎÅÍ ÇØ´çÇÏ´Â ´ŞÀÇ ÇÑ ´Ş Àü±îÁö ´õ ´õÇÔ
+			sum += getMaxDay(year, i);  // í•´ë‹¹í•˜ëŠ” ë…„ì˜ 1ì›”ë¶€í„° í•´ë‹¹í•˜ëŠ” ë‹¬ì˜ í•œ ë‹¬ ì „ê¹Œì§€ ë” ë”í•¨
 		}
-		sum++; //ÇÏ·ç¸¸ ´õÇÏ¸é µÊ. ex) 6¿ù ¸»±îÁö ´Ù ´õÇÏ°í, 7¿ù 1ÀÏÀ» ±¸ÇØ¾ß ÇÏ´Ï±ñ +1 ÇÏ¸é 7/1ÀÏÀÌ µÈ´Ù.
-		return sum % 7 ;	//µü ¶³¾îÁö¸é ÀÏ¿äÀÏ, 1ÀÌ ³²À¸¸é ¿ù¿äÀÏ ~ (´ëºÎºĞÀÇ ´Ş·ÁÀÌ ÀÏ¿äÀÏºÎÅÍ ½ÃÀÛÇÏ´Â ÀÌÀ¯=ÀÏ¿äÀÏÀÌ 7·Î ³ª´« ³ª¸ÓÁö)
+		sum++; //í•˜ë£¨ë§Œ ë”í•˜ë©´ ë¨. ex) 6ì›” ë§ê¹Œì§€ ë‹¤ ë”í•˜ê³ , 7ì›” 1ì¼ì„ êµ¬í•´ì•¼ í•˜ë‹ˆê¹ +1 í•˜ë©´ 7/1ì¼ì´ ëœë‹¤.
+		return sum % 7 ;	//ë”± ë–¨ì–´ì§€ë©´ ì¼ìš”ì¼, 1ì´ ë‚¨ìœ¼ë©´ ì›”ìš”ì¼ ~ (ëŒ€ë¶€ë¶„ì˜ ë‹¬ë ¤ì´ ì¼ìš”ì¼ë¶€í„° ì‹œì‘í•˜ëŠ” ì´ìœ =ì¼ìš”ì¼ì´ 7ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€)
 	}
 	int getMaxDay(int year, int month) {
 		int maxday = 0;
-		switch(month) {//switch, if else, 3Ç× ¿¬»êÀÚ µî ¹¹µç ´Ù °¡´É
+		switch(month) {//switch, if else, 3í•­ ì—°ì‚°ì ë“± ë­ë“  ë‹¤ ê°€ëŠ¥
 		case 1:
 		case 3:
 		case 5:
@@ -72,15 +72,15 @@ public class Main {
 		}
 		return maxday;
 	}
-	boolean isLeapYear(int year){ // À±³âÀÎÁö ¿©ºÎ È®ÀÎ, is~??¸é º¸Åë boolean À» ¾´´Ù
-		//Parameter·Î µé¾î¿Â ³âµµ°¡ À±³âÀÌ¶ó¸é true, ±×·¸Áö ¾ÊÀ¸¸é false¸¦ ¸®ÅÏÇÏ±â
+	boolean isLeapYear(int year){ // ìœ¤ë…„ì¸ì§€ ì—¬ë¶€ í™•ì¸, is~??ë©´ ë³´í†µ boolean ì„ ì“´ë‹¤
+		//Parameterë¡œ ë“¤ì–´ì˜¨ ë…„ë„ê°€ ìœ¤ë…„ì´ë¼ë©´ true, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ falseë¥¼ ë¦¬í„´í•˜ê¸°
 		if((year%400 == 0) || (year%4 ==0 && year % 100 != 0))
-			return true; //if¹® ¸¸Á·ÇÏ¸é true, 
-		else return false; // if¹® ¸¸Á·¾ÈÇÏ¸é false; //¿ø·¡´Â return ¹Ø¿¡ ¾Æ¹«°Íµµ ¾²¸é ¾ÈµÇ´Âµ¥ Á¶°Ç¹® ¾È¿¡ ~
+			return true; //ifë¬¸ ë§Œì¡±í•˜ë©´ true, 
+		else return false; // ifë¬¸ ë§Œì¡±ì•ˆí•˜ë©´ false; //ì›ë˜ëŠ” return ë°‘ì— ì•„ë¬´ê²ƒë„ ì“°ë©´ ì•ˆë˜ëŠ”ë° ì¡°ê±´ë¬¸ ì•ˆì— ~
 	}
 }
-	//staticÀ¸·Î ¾È ¾²°í °¢ º¯¼öµéÀ» member·Î ¾´ ÀÌÀ¯´Â, staticÀº °øÀ¯´Ï±î º¸¾ÈÀÇ ¹®Á¦°¡ »ı±ä´Ù.
-	//mainÀº ÀÛÀ»¼ö·Ï ÁÁ´Ù. mainÀÌ ÇÒ ÀÏµéÀ» outsourcing
-	//¸¶Áö¸·ÁÙÀÇ °ø¹é¿¡µµ º° ÂïÀ¸·Á¸é? 
+	//staticìœ¼ë¡œ ì•ˆ ì“°ê³  ê° ë³€ìˆ˜ë“¤ì„ memberë¡œ ì“´ ì´ìœ ëŠ”, staticì€ ê³µìœ ë‹ˆê¹Œ ë³´ì•ˆì˜ ë¬¸ì œê°€ ìƒê¸´ë‹¤.
+	//mainì€ ì‘ì„ìˆ˜ë¡ ì¢‹ë‹¤. mainì´ í•  ì¼ë“¤ì„ outsourcing
+	//ë§ˆì§€ë§‰ì¤„ì˜ ê³µë°±ì—ë„ ë³„ ì°ìœ¼ë ¤ë©´? 
 	
 	
