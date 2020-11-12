@@ -1,7 +1,7 @@
 
 
 public class Employee extends Person implements IPerson{
-	private String empno; //¸â¹öº¯¼ö´Â ¹«Á¶°Ç private!!!
+	private String empno; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ private!!!
 	private double salary;
 		
 //	Employee(){};
@@ -26,17 +26,17 @@ public class Employee extends Person implements IPerson{
 	}
 //	@Override
 //	public String toString() {
-//		return super.toString() + "\nEmployee [empno=" + empno + ", salary=" + salary + "]";  //ºÎ¸ð°¡ abstractµÇ¼­ ¾È µÊ.
+//		return super.toString() + "\nEmployee [empno=" + empno + ", salary=" + salary + "]";  //ï¿½Î¸ï¿½ abstractï¿½Ç¼ï¿½ ï¿½ï¿½ ï¿½ï¿½.
 //	};
 
 	public void printInfo() {
-		System.out.println("»ç¹ø = " + empno + ",ºÀ±Þ = " + salary);
+		System.out.println("ï¿½ï¿½ï¿½ = " + empno + ",ï¿½ï¿½ï¿½ï¿½ = " + salary);
 		
 	}
 	@Override
 	public String toString() {
-		return String.format("%s, %d, %s, %s, %.1f\n", getName(), getAge(), getAddress(), empno, salary);  //empno, salary´Â °°Àº ½Ä±¸´Ï±î µé°í¿À´Â °Í! 
-	}//getname getage getaddressµéÀº ºÎ¸ð²¨ µé°í ¿À±â ¶§¹®¿¡~¹Ù·Î ¾µ ¼ö ÀÖ´Ù.
+		return String.format("%s, %d, %s, %s, %.1f\n", getName(), getAge(), getAddress(), empno, salary);  //empno, salaryï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½! 
+	}//getname getage getaddressï¿½ï¿½ï¿½ï¿½ ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½Ù·ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
 	
 	
 }
