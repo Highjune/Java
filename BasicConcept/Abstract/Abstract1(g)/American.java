@@ -4,12 +4,12 @@ public class American extends Mammal {
 	public void saySomething() {
 		System.out.println("Good Morning");
 	}
-}
+} 
 
 
 //public abstract class American extends Mammal {
 //	@Override
 //	public void saySomething() {
 //		System.out.println("Good Morning");
-//	}///¿©±â¼­ ¸öÅëÀ» ¾È ¾²¸é(¿¡·¯³­´Ù) Á© À§¿¡ class¾Õ¿¡ abstractµµ ºÙ¿©ÁÖ¸é µÈ´Ù. ´ë½Å¿¡ new´Â ¸ø ¾¸
+//	}///ì—¬ê¸°ì„œ ëª¸í†µì„ ì•ˆ ì“°ë©´(ì—ëŸ¬ë‚œë‹¤) ì ¤ ìœ„ì— classì•ì— abstractë„ ë¶™ì—¬ì£¼ë©´ ëœë‹¤. ëŒ€ì‹ ì— newëŠ” ëª» ì”€
 //}
