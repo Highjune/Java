@@ -1,7 +1,7 @@
 package test;
 
 // 추상 클래스
-public abstract class  Animal { 
+public abstract class  Animal {  
 	public String kind; 
 	
 	public void breathe() {
