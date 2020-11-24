@@ -4,7 +4,7 @@
   
 public class Abstract {
 	public static void main(String[] args) {
-//		Birds buz = new Birds(); 	 //하면 에러남
+//		Birds buz = new Birds(); 	 //하면 에러남 
 		Birds buz = new Sparow(); 	 
 		
 		buz.display();
