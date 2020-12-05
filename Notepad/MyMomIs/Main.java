@@ -6,7 +6,7 @@ public class Main {
 		m.calc(fff);
 		m.output(fff);		
 	}
-	
+	 
 	Family input() {
 		Family m = new Family();
 		m.position = "mother";
