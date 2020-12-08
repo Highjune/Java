@@ -11,7 +11,7 @@ public class RandomGetMEthod{
 		int[] result = fillRand(new int[10], new int[] {2, 3, 7, 5});
 		
 		System.out.println(Arrays.toString(result));
-}
+} 
 	
 
 
