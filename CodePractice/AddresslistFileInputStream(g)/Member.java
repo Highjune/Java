@@ -7,7 +7,7 @@ public class Member {
 		this.age = age;
 		this.email = email;
 	
-	
+	 
 	}
 	public String getName() {
 		return name;
