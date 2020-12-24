@@ -3,7 +3,7 @@ import java.util.Scanner;
  
 public class Insert {
 	private  ArrayList<Person> list;
-	private Scanner scan;
+	private Scanner scan; 
 	
 	public Insert(ArrayList<Person> list, Scanner scan) {
 		this.list = list;
